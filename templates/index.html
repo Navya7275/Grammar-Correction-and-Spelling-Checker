@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Checker</title>
+    <!-- Reference the CSS file using Flask's url_for function -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Reference the JavaScript file using Flask's url_for function -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>📝 Text Checker</h1>
+        <p>Analyze text or upload files with ease!</p>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <!-- Reference images using Flask's url_for function -->
+                <img src="{{ url_for('static', filename='feature1.jpg') }}" alt="Feature 1">
+                <h3>Fast Analysis</h3>
+                <p>Get instant feedback on your text or uploaded files.</p>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='feature2.jpg') }}" alt="Feature 2">
+                <h3>User Friendly</h3>
+                <p>Enjoy a clean, intuitive interface for quick analysis.</p>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='feature3.jpg') }}" alt="Feature 3">
+                <h3>Secure Uploads</h3>
+                <p>Your files are processed securely and never stored.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <h2>Get Started</h2>
+            <form action="/check" method="POST" enctype="multipart/form-data" id="textForm" onreset="clearForm()">
+                <div class="form-group">
+                    <label for="text">Enter text manually:</label>
+                    <textarea name="text" id="text" rows="5" placeholder="Type or paste your text here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="file">Or upload a file (PDF or PPTX):</label>
+                    <input type="file" name="file" id="file" accept=".pdf,.pptx">
+                    <small class="info-text">Only PDF or PPTX files are allowed (Max size: 2MB).</small>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+                <button type="reset" class="btn secondary-btn">Clear</button>
+            </form>
+                     
+        </div>
+    </section>
+
+    <!-- Image Showcase -->
+    <section class="image-showcase">
+        <h2>How It Works</h2>
+        <div class="image-container">
+            <!-- Reference images using Flask's url_for function -->
+            <img src="{{ url_for('static', filename='step1.jpg') }}" alt="Step 1: Enter Text" class="interactive-image">
+            <img src="{{ url_for('static', filename='step2.jpg') }}" alt="Step 2: Upload File" class="interactive-image">
+            <img src="{{ url_for('static', filename='step3.jpg') }}" alt="Step 3: Get Results" class="interactive-image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Text Checker | Powered by Navya Singhal </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correction Result</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="static/results.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Correction Result</h1>
+
+        <div class="section">
+            <p><strong>Original Text:</strong></p>
+            <pre>{{ original_text }}</pre>
+        </div>
+
+        <div class="section">
+            <p><strong>Corrected Text:</strong></p>
+            <pre class="corrected-text">{{ corrected_text }}</pre>
+            <!-- Button to copy corrected text to clipboard -->
+            <button id="copyButton">Copy Corrected Text</button>
+        </div>
+
+        <!-- Button to go back to the home page -->
+        <a href="{{ url_for('index') }}">
+            <button class="home-button">Go back to Home</button>
+        </a>
+
+        <!-- Form to download the corrected text as a PDF -->
+        <form method="POST" action="{{ url_for('download_pdf') }}">
+            <input type="hidden" name="corrected_text" value="{{ corrected_text }}">
+            <button type="submit" class="download-button">Download Corrected Text as PDF</button>
+        </form>
+    </div>
+
+    <!-- Error alert (hidden by default) -->
+    <div class="alert" style="display: none;" id="errorAlert">
+        Something went wrong while processing your request.
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="static/results.js" defer></script>
+</body>
+</html>

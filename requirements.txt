@@ -1,0 +1,7 @@
+Flask
+pdfplumber
+python-pptx
+reportlab
+transformers
+language-tool-python
+torch
