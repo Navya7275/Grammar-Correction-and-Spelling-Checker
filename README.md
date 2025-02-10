@@ -1,5 +1,6 @@
 # 📝 Text Checker Web App
 ⚠️ This project is currently in development. More features and refinements are being added to enhance functionality and improve user experience. ⚠️
+
 This is a Flask-based web application that allows users to analyze and correct text grammar and spelling. Users can either manually input text or upload PDF/PPTX files for correction. The application uses LanguageTool for spelling correction and Grammarly's CoEdit model for grammar correction.
 
 ## ✨ Features
